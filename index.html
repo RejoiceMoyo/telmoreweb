@@ -704,7 +704,7 @@
     <header id="header">
         <nav>
             <div class="logo-nav">
-                <img src="../images/1000292272.jpg" alt="TERA Logo">
+                <img src="images/1000292272.jpg" alt="TERA Logo">
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -725,7 +725,7 @@
     <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="particles" id="particles-js"></div>
-        <img src="../images/1000292273.jpg" alt="TERA STUDIOS Logo" class="logo">
+        <img src="images/1000292273.jpg" alt="TERA STUDIOS Logo" class="logo">
         <h1>TERA STUDIOS</h1>
         <p>We craft bold, animated stories that move minds and shift perspectives.</p>
         <p>Welcome to TERA STUDIOS — where vision meets motion.</p>
@@ -1065,4 +1065,19 @@
             document.querySelectorAll('nav a').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
+                    const targetId = this.getAttribute('href').slice(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    // Close mobile nav if open
+                    nav.classList.remove('active');
+                    burger.classList.remove('toggle');
+                });
+            });
+        });
+    // Remove extra closing parenthesis here
+    </script>
+</body>
+</html>
                     
